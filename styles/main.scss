@@ -1,0 +1,127 @@
+@import "styles/reset.scss";
+
+html {
+  height: 100vh;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-image: url(/img/bk.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  .wrap {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 114px;
+  }
+}
+
+header {
+  display: grid;
+  grid-template-columns: 15% 65% 20%;
+  grid-template-rows: repeat(3, 33%);
+  width: 100%;
+  height: 8rem;
+  border: 1px solid gray;
+  position: fixed;
+  background-color: rgba(233, 221, 207, 0.9);
+  .logo {
+    grid-area: 1/1/4/2;
+  }
+  .logo img {
+    width: 100%;
+    max-width: 150px;
+    height: 100%;
+    max-height: 150px;
+    padding-left: 1rem;
+  }
+
+  .search_bar {
+    display: flex;
+    position: relative;
+    grid-area: 1/2/3/3;
+    width: 90%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3rem;
+
+    input {
+      width: 100%;
+      height: 2rem;
+      background-color: #e9ddcf;
+      border-radius: 0.5rem;
+      border: 1.5px solid #462334;
+      opacity: 0.7;
+      padding-left: 1rem;
+      font-weight: bold;
+    }
+    input::placeholder {
+      color: #462334;
+    }
+    svg {
+      position: absolute;
+      right: 0.5rem;
+    }
+  }
+  .menu_bar {
+    display: flex;
+    flex-direction: row;
+    grid-area: 2/2/-1/-1;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 1rem;
+  }
+  .profile {
+    display: flex;
+    grid-area: 1/3/-2/-2;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    max-width: 200px;
+    .profile__img img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+  }
+}
+
+main {
+  display: grid;
+  padding-top: 8rem;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 95% 25%;
+  .ad {
+    grid-area: 1/1/2/2;
+    width: 100%;
+    height: 100%;
+    border: 3px solid black;
+  }
+  .ad img {
+    max-width: 100%;
+    max-height: 80%;
+  }
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  height: 5rem;
+  justify-content: center;
+  align-items: center;
+  background-color: antiquewhite;
+  position: absolute;
+  bottom: 0;
+
+  .instagram {
+    display: flex;
+  }
+  .instagram a svg {
+    width: 5rem;
+    height: 5rem;
+  }
+}
