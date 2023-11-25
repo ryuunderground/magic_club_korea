@@ -6,7 +6,8 @@
     <title>Magic club Korea - Register</title>
     <link rel="stylesheet" href="../styles/register.scss" />
   </head>
-  <header>
+
+  <body>
     <div class="instagram">
       <a href="https://www.instagram.com/magic_club_official/">
         <svg
@@ -20,51 +21,60 @@
           /></svg
       ></a>
     </div>
-  </header>
-  <body>
-    <div class="user-component">
-      <div class="logo">
-        <img src="/img/main_page.jpg" class="magic_club-logo" />
+    <div class="register__container">
+      <div class="user-component">
+        <div class="logo">
+          <img src="/img/main_page.jpg" class="magic_club-logo" />
+        </div>
+      </div>
+      <div class="user-component">
+        <form class="register-form">
+          <h2 class="register__title">회원가입</h2>
+          <input required type="text" class="name" placeholder="이름" />
+          <input required type="text" class="id" placeholder="아이디" />
+          <input required type="password" class="pw" placeholder="비밀번호" />
+          <input required type="text" class="username" placeholder="닉네임" />
+          <div class="register__phone-number">
+            <span>연락처:</span>
+            <input
+              required
+              type="text"
+              class="phone_number"
+              id="first_phone_number"
+              placeholder="010"
+              maxlength="3"
+              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+            />
+            -
+            <input
+              required
+              type="text"
+              class="phone_number"
+              id="second_phone_number"
+              placeholder="1234"
+              maxlength="4"
+              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+            />
+            -
+            <input
+              required
+              type="text"
+              class="phone_number"
+              id="third_phone_number"
+              placeholder="5678"
+              maxlength="4"
+              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+            />
+          </div>
+          <label for="adult-check">
+            <input required type="checkbox" id="adult-check" />만 19세
+            이상입니다.
+          </label>
+          <input type="submit" value="회원가입" />
+        </form>
       </div>
     </div>
-    <div class="user-component">
-      <form class="register-form">
-        <h2 class="register__title">회원가입</h2>
-        <input required type="text" class="name" placeholder="이름" />
-        <input required type="text" class="id" placeholder="아이디" />
-        <input required type="password" class="pw" placeholder="비밀번호" />
-        <input required type="text" class="username" placeholder="닉네임" />
-        <div class="register__phone-number">
-          <span>연락처:</span>
-          <input
-            required
-            type="number"
-            class="phone_number"
-            placeholder="010"
-            maxlength="3"
-          />
-          -
-          <input
-            required
-            type="number"
-            class="phone_number"
-            placeholder="1234"
-            maxlength="4"
-          />
-          -
-          <input
-            required
-            type="number"
-            class="phone_number"
-            placeholder="5678"
-            maxlength="4"
-          />
-        </div>
-        <label for="adult-check">
-          <input required type="checkbox" id="adult-check" />만 19세 이상입니다.
-        </label>
-        <input type="submit" value="회원가입" />
-      </form>
-    </div>
+    <script src="../js/register.js"></script>
+    <script src="../js/age_check.js"></script>
   </body>
 </html>
