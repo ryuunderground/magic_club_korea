@@ -29,16 +29,37 @@
     </div>
     <div class="user-component">
       <form class="register-form">
-        <h2 class="register">회원가입</h2>
+        <h2 class="register__title">회원가입</h2>
         <input required type="text" class="name" placeholder="이름" />
         <input required type="text" class="id" placeholder="아이디" />
         <input required type="password" class="pw" placeholder="비밀번호" />
-        <input
-          required
-          type="text"
-          class="phone_number"
-          placeholder="전화번호"
-        />
+        <input required type="text" class="username" placeholder="닉네임" />
+        <div class="register__phone-number">
+          <span>연락처:</span>
+          <input
+            required
+            type="number"
+            class="phone_number"
+            placeholder="010"
+            maxlength="3"
+          />
+          -
+          <input
+            required
+            type="number"
+            class="phone_number"
+            placeholder="1234"
+            maxlength="4"
+          />
+          -
+          <input
+            required
+            type="number"
+            class="phone_number"
+            placeholder="5678"
+            maxlength="4"
+          />
+        </div>
         <label for="adult-check">
           <input required type="checkbox" id="adult-check" />만 19세 이상입니다.
         </label>

@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Magic club Korea - Main</title>
-    <link rel="stylesheet" href="styles/main.scss" />
+    <title>Magic club Korea - 문의 작성</title>
+    <link rel="stylesheet" href="styles/writing_inquire.scss" />
   </head>
   <body>
     <header>
@@ -64,12 +64,20 @@
           </div>
         </div></a
       >
-    </header>
-
-    <main>
-      <div class="main_logo__container">
-        <img class="main_logo" src="img/box_logo_only.png" />
+      <div class="__label">
+        <span>문의 작성</span>
       </div>
+    </header>
+    <main>
+      <form class="inquire__container">
+        <div class="title__container">
+          <input type="text" class="title__input" placeholder="제목" />
+        </div>
+        <div class="paragraph__container">
+          <input type="text" class="paragraph__input" placeholder="내용 입력" />
+        </div>
+        <button class="upload__btn">작성 하기</button>
+      </form>
     </main>
     <footer>
       <div class="contact">
