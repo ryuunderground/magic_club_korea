@@ -8,31 +8,30 @@ const formattedDate = currentDate.toLocaleDateString("ko-KR", {
   day: "2-digit",
 });
 
-function submitPost(event) {
+function submitNotice(event) {
   const title = inputTitle.value;
   const paragraph = inputParagraph.value;
 
   // 현재 로컬 스토리지에 저장된 게시물 가져오기
-  let posts = JSON.parse(localStorage.getItem("posts")) || [];
+  let notices = JSON.parse(localStorage.getItem("notices")) || [];
 
   // 새로운 게시물 객체 생성
-  const newPost = {
-    order: posts.length + 1,
+  const newNotice = {
+    order: notices.length + 1,
     title: title,
     paragraph: paragraph,
     timeline: formattedDate,
   };
   // 새로운 게시물을 배열에 추가
-  posts.push(newPost);
+  notices.push(newNotice);
 
   // 로컬 스토리지에 업데이트된 게시물 저장
-  localStorage.setItem("posts", JSON.stringify(posts));
+  localStorage.setItem("notices", JSON.stringify(notices));
 
-  //등등 서버로 문의 내용 전송//
-  //나는 연결할 능력이 없기에 일단 로컬 스토리지로....//
+  //나는 외부 서버랑 연결할 능력이 없기에 일단 로컬 스토리지로....//
   event.preventDefault();
   window.location.replace("/templates/notification.html");
-  window.alert("문의 내용이 작성되었습니다.");
+  window.alert("공지 내용이 작성되었습니다.");
 }
 
-uploadBtn.addEventListener("click", submitPost);
+uploadBtn.addEventListener("click", submitNotice);
